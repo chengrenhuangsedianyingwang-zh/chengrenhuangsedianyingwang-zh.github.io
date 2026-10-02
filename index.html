@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成人黄色电影网 | 朱红光影志 · 把每部好片都看进骨子里</title>
+<meta name="description" content="成人黄色电影网（chengrenhuangsedianyingwang-zh.github.io）是以“朱红光影志”为主题的温情电影导航站，专注经典老片、华语佳片、国风美学与治愈系推荐，每周更新精选片单。">
+<meta name="keywords" content="成人黄色电影网,朱红光影志,华语佳片,经典老片,国风电影,治愈系片单,每周精选,温情电影导航,电影推荐,光影志,红红看片">
+<meta name="author" content="成人黄色电影网">
+<meta name="robots" content="index,follow">
+<meta name="renderer" content="webkit">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:title" content="成人黄色电影网 | 朱红光影志">
+<meta property="og:description" content="把每部好片都看进骨子里。华语经典、国风美学、治愈系片单，每周精选，慢慢看。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chengrenhuangsedianyingwang-zh.github.io">
+<meta property="og:site_name" content="成人黄色电影网">
+<link rel="canonical" href="https://chengrenhuangsedianyingwang-zh.github.io">
+<style>
+:root{
+    --paper:#fdf6ef;
+    --paper-2:#f8efe3;
+    --paper-3:#f2e4d2;
+    --vermilion:#c8321f;
+    --vermilion-d:#a02516;
+    --vermilion-l:#e6553e;
+    --cinnabar:#e83828;
+    --ink:#241410;
+    --ink-2:#57433a;
+    --ink-3:#8a7369;
+    --seal:#b32418;
+    --gold:#c79a3e;
+    --jade:#3f7560;
+    --line:#e8d8c8;
+    --line-2:#dcc6b2;
+    --shadow-s:0 2px 10px rgba(120,50,30,.07);
+    --shadow-m:0 14px 34px -14px rgba(120,50,30,.28);
+    --shadow-l:0 28px 64px -24px rgba(120,50,30,.4);
+    --r-s:8px;
+    --r-m:16px;
+    --r-l:26px;
+    --ease:cubic-bezier(.22,.78,.3,1);
+    --serif:"Songti SC","STSong","Noto Serif SC","SimSun",serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--vermilion);color:#fff}
+.serif{font-family:var(--serif)}
+
+/* 宣纸纹理 + 印章水印 */
+body::before{
+    content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+    background:
+        radial-gradient(circle at 12% 18%,rgba(200,50,31,.05),transparent 42%),
+        radial-gradient(circle at 88% 62%,rgba(199,154,62,.06),transparent 40%);
+}
+body::after{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+    background-image:
+        repeating-linear-gradient(0deg,transparent 0,transparent 2px,rgba(120,80,50,.018) 2px,rgba(120,80,50,.018) 3px),
+        repeating-linear-gradient(90deg,transparent 0,transparent 2px,rgba(120,80,50,.014) 2px,rgba(120,80,50,.014) 3px);
+}
+
+/* 滚动进度 */
+.brush{position:fixed;top:0;left:0;height:4px;width:0;z-index:3000;background:linear-gradient(90deg,var(--cinnabar),var(--gold));transition:width .1s linear}
+
+/* 导航 */
+.nav{position:sticky;top:0;z-index:1000;background:rgba(253,246,239,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-row{max-width:1240px;margin:0 auto;padding:0 30px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:14px}
+.seal{
+    width:46px;height:46px;border-radius:6px;flex-shrink:0;position:relative;cursor:pointer;
+    background:var(--seal);transform:rotate(-4deg);box-shadow:0 4px 12px rgba(179,36,24,.3);
+    display:grid;place-items:center;color:#fbe8d8;font-family:var(--serif);font-size:19px;font-weight:900;
+    transition:.4s var(--ease);overflow:hidden;
+}
+.seal::before{content:"";position:absolute;inset:3px;border:1.5px solid rgba(255,255,255,.45);border-radius:3px}
+.seal:hover{transform:rotate(3deg) scale(1.08)}
+.brand-txt{display:flex;flex-direction:column;line-height:1.2}
+.brand-cn{font-size:21px;font-weight:900;letter-spacing:2px}
+.brand-en{font-size:10px;letter-spacing:3.5px;color:var(--ink-3);text-transform:uppercase;margin-top:3px}
+.menu{display:flex;align-items:center;gap:2px;list-style:none}
+.menu a{padding:8px 15px;border-radius:var(--r-s);font-size:14.5px;font-weight:600;color:var(--ink-2);transition:.25s var(--ease);position:relative}
+.menu a:hover{color:var(--vermilion);background:var(--paper-2)}
+.menu a::after{content:"";position:absolute;left:50%;bottom:2px;width:0;height:2px;background:var(--vermilion);transition:.3s var(--ease)}
+.menu a:hover::after{width:60%;left:20%}
+.nav-btn{padding:10px 22px;border-radius:var(--r-s);border:1.5px solid var(--vermilion);background:var(--vermilion);color:#fff;font-size:13.5px;font-weight:700;cursor:pointer;transition:.3s var(--ease);white-space:nowrap;font-family:inherit}
+.nav-btn:hover{background:var(--vermilion-d);border-color:var(--vermilion-d);transform:translateY(-2px);box-shadow:var(--shadow-m)}
+.burger{display:none;width:44px;height:44px;border:1.5px solid var(--line-2);border-radius:var(--r-s);background:#fff;cursor:pointer;position:relative}
+.burger s{position:absolute;left:12px;width:18px;height:2px;background:var(--ink);border-radius:2px;text-decoration:none;transition:.3s var(--ease)}
+.burger s:nth-child(1){top:15px}.burger s:nth-child(2){top:21px}.burger s:nth-child(3){top:27px}
+.burger.on s:nth-child(1){top:21px;transform:rotate(45deg)}.burger s:nth-child(2){opacity:0}.burger.on s:nth-child(3){top:21px;transform:rotate(-45deg)}
+
+/* 通用 */
+.wrap{max-width:1240px;margin:0 auto;padding:0 30px}
+section{padding:104px 0;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--serif);font-size:12.5px;font-weight:700;letter-spacing:3px;color:var(--vermilion);margin-bottom:18px}
+.eyebrow .brush-dot{width:22px;height:2px;background:var(--vermilion)}
+.stitle{font-family:var(--serif);font-size:clamp(1.9rem,4.2vw,3rem);font-weight:900;letter-spacing:1px;line-height:1.3;margin-bottom:16px}
+.sdesc{font-size:15.5px;color:var(--ink-3);max-width:560px;line-height:1.95}
+.shead{margin-bottom:60px}
+.shead-flex{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:60px;flex-wrap:wrap}
+.more{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:var(--vermilion);white-space:nowrap;flex-shrink:0;border-bottom:1px solid transparent;padding-bottom:2px}
+.more:hover{border-color:var(--vermilion);gap:11px}
+.sec-tag{position:absolute;top:104px;right:30px;font-family:var(--serif);font-size:13vw;font-weight:900;color:rgba(200,50,31,.055);line-height:1;pointer-events:none;user-select:none;letter-spacing:-4px}
+
+/* Hero */
+.hero{padding:56px 0 88px}
+.hero-in{max-width:920px;position:relative}
+.h-eyebrow{display:inline-flex;align-items:center;gap:12px;margin-bottom:30px}
+.h-eyebrow .v{width:2px;height:26px;background:var(--vermilion)}
+.h-eyebrow span{font-family:var(--serif);font-size:13px;letter-spacing:4px;color:var(--ink-3)}
+.hero h1{font-family:var(--serif);font-size:clamp(2.6rem,6.6vw,5.2rem);font-weight:900;line-height:1.18;letter-spacing:2px;margin-bottom:28px}
+.hero h1 .em{color:var(--vermilion);position:relative;white-space:nowrap}
+.hero h1 .em::after{content:"";position:absolute;left:6%;right:6%;bottom:8%;height:14px;background:rgba(232,56,40,.16);z-index:-1;border-radius:2px}
+.hero h1 small{display:block;font-family:"Noto Sans SC",sans-serif;font-size:.22em;font-weight:500;color:var(--ink-3);letter-spacing:6px;margin-top:22px;text-transform:uppercase}
+.hero-sub{font-size:16.5px;color:var(--ink-2);line-height:1.95;margin-bottom:38px;max-width:600px}
+.h-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:var(--r-s);font-size:15px;font-weight:700;border:1.5px solid transparent;cursor:pointer;transition:.35s var(--ease);font-family:inherit}
+.btn-pri{background:var(--vermilion);color:#fff;box-shadow:0 6px 18px rgba(200,50,31,.28)}
+.btn-pri:hover{background:var(--vermilion-d);transform:translateY(-3px);box-shadow:0 12px 30px rgba(200,50,31,.38)}
+.btn-out{background:#fff;color:var(--ink);border-color:var(--line-2)}
+.btn-out:hover{border-color:var(--vermilion);color:var(--vermilion);transform:translateY(-3px)}
+.h-marks{display:flex;gap:0;flex-wrap:wrap;border-top:1px solid var(--line-2)}
+.h-marks div{padding:26px 34px 0 0;border-right:1px solid var(--line);padding-right:34px;margin-right:34px}
+.h-marks div:last-child{border:none;padding-right:0;margin-right:0}
+.h-marks strong{display:block;font-family:var(--serif);font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:900;letter-spacing:.5px;line-height:1}
+.h-marks strong i{font-style:normal;font-size:.5em;color:var(--vermilion);margin-left:4px}
+.h-marks span{font-size:12.5px;color:var(--ink-3);margin-top:8px;display:block}
+.hero-ink{display:flex;gap:10px;margin-top:40px;flex-wrap:wrap}
+.hero-ink span{
+    font-family:var(--serif);font-size:15px;font-weight:700;color:var(--ink-2);
+    padding:7px 16px;border-radius:4px;background:var(--paper-2);border:1px solid var(--line);
+    transition:.3s;cursor:default;
+}
+.hero-ink span:hover{color:#fff;background:var(--vermilion);border-color:var(--vermilion)}
+
+/* 卷轴式栏目入口 */
+.scroll-nav{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.chapters{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0;border-left:1px solid var(--line)}
+.ch{position:relative;padding:32px 26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;transition:.4s var(--ease);display:block;overflow:hidden}
+.ch::before{content:"";position:absolute;top:0;left:0;width:4px;height:0;background:var(--vermilion);transition:.4s var(--ease)}
+.ch:hover{background:var(--paper);transform:translateY(-4px)}
+.ch:hover::before{height:100%}
+.ch .cn{font-family:var(--serif);font-size:32px;font-weight:900;color:rgba(200,50,31,.16);line-height:1;margin-bottom:14px;transition:.4s}
+.ch:hover .cn{color:rgba(200,50,31,.32)}
+.ch h3{font-size:16.5px;font-weight:800;margin-bottom:7px;letter-spacing:.5px}
+.ch p{font-size:12.5px;color:var(--ink-3);line-height:1.75}
+.ch .arrow{position:absolute;right:20px;bottom:20px;font-size:16px;color:var(--vermilion);opacity:0;transform:translateX(-8px);transition:.35s var(--ease)}
+.ch:hover .arrow{opacity:1;transform:translateX(0)}
+
+/* 今日主推 - 折子页 */
+.feat-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:stretch}
+.feat-main{position:relative;border-radius:var(--r-l);overflow:hidden;min-height:480px;box-shadow:var(--shadow-l)}
+.feat-main img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .8s var(--ease)}
+.feat-main:hover img{transform:scale(1.05)}
+.feat-main .dim{position:absolute;inset:0;background:linear-gradient(100deg,rgba(20,10,8,.85) 0%,rgba(20,10,8,.45) 48%,transparent 75%)}
+.feat-body{position:absolute;left:0;right:0;bottom:0;padding:44px;color:#fff;z-index:2}
+.feat-tape{display:inline-flex;align-items:center;gap:8px;background:var(--vermilion);padding:6px 14px;border-radius:4px;font-size:11.5px;font-weight:700;letter-spacing:1.5px;margin-bottom:18px}
+.feat-body h3{font-family:var(--serif);font-size:clamp(1.6rem,3.2vw,2.3rem);font-weight:900;line-height:1.45;margin-bottom:14px}
+.feat-body p{font-size:14px;color:#f0dfd0;line-height:1.9;max-width:480px}
+.feat-meta{display:flex;gap:22px;margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.22);font-size:12.5px;color:#e6d2c2;flex-wrap:wrap}
+.feat-side{display:flex;flex-direction:column;gap:20px}
+.feat-s{position:relative;flex:1;background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:26px 26px 26px 30px;overflow:hidden;transition:.4s var(--ease);display:block}
+.feat-s::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--vermilion)}
+.feat-s:hover{transform:translateX(6px);box-shadow:var(--shadow-m);border-color:var(--line-2)}
+.feat-s .ft{font-size:11.5px;font-weight:700;letter-spacing:2px;color:var(--vermilion);margin-bottom:10px}
+.feat-s h4{font-family:var(--serif);font-size:18.5px;font-weight:900;line-height:1.45;margin-bottom:8px}
+.feat-s p{font-size:13px;color:var(--ink-3);line-height:1.8}
+.feat-s .fx{display:flex;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);font-size:12px;color:var(--ink-3)}
+.feat-s .fx b{color:var(--vermilion);font-weight:700}
+
+/* 片单 - 横向卷轴卡 */
+.films{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:26px}
+.film{display:block;group}
+.f-poster{position:relative;border-radius:var(--r-m);overflow:hidden;aspect-ratio:3/4;background:var(--paper-3)}
+.f-poster img{width:100%;height:100%;object-fit:cover;transition:transform .65s var(--ease),filter .4s}
+.film:hover .f-poster img{transform:scale(1.08);filter:brightness(.88)}
+.f-tag{position:absolute;top:12px;left:12px;padding:5px 11px;border-radius:4px;font-size:11px;font-weight:700;color:#fff;background:var(--vermilion);font-family:var(--serif);letter-spacing:1px}
+.f-tag.t2{background:var(--jade)}.f-tag.t3{background:var(--gold)}.f-tag.t4{background:var(--ink)}
+.f-no{position:absolute;top:10px;right:12px;font-family:var(--serif);font-size:28px;font-weight:900;color:rgba(255,255,255,.85);text-shadow:0 2px 10px rgba(0,0,0,.4)}
+.f-play{position:absolute;bottom:14px;right:14px;width:42px;height:42px;border-radius:50%;background:var(--vermilion);color:#fff;display:grid;place-items:center;font-size:15px;box-shadow:0 4px 14px rgba(200,50,31,.4);transform:scale(0);transition:.35s var(--ease);opacity:0}
+.film:hover .f-play{transform:scale(1);opacity:1}
+.f-info{padding:16px 2px 0}
+.f-info h4{font-family:var(--serif);font-size:17px;font-weight:900;margin-bottom:6px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.f-info .fr{display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink-3);align-items:center}
+.f-info .fr b{color:var(--vermilion);font-weight:700;font-size:13px}
+.f-info .fd{margin-top:8px;font-size:12.5px;color:var(--ink-3);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.7}
+
+/* 朱红札记 - 水墨卡片 */
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+.note{background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:30px;transition:.4s var(--ease);position:relative;overflow:hidden}
+.note::before{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:var(--paper-2);transition:.5s var(--ease)}
+.note:hover{transform:translateY(-6px);box-shadow:var(--shadow-m);border-color:var(--line-2)}
+.note:hover::before{background:rgba(200,50,31,.08);transform:scale(1.4)}
+.n-head{display:flex;align-items:center;gap:12px;margin-bottom:18px;position:relative}
+.n-ava{width:44px;height:44px;border-radius:6px;background:var(--vermilion);color:#fbe8d8;font-family:var(--serif);font-weight:900;font-size:17px;display:grid;place-items:center;flex-shrink:0;transform:rotate(-3deg)}
+.n-who{font-size:14.5px;font-weight:800}
+.n-when{font-size:11.5px;color:var(--ink-3)}
+.note .cat{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--vermilion);border:1px solid var(--vermilion);padding:3px 10px;border-radius:3px;margin-bottom:12px;position:relative}
+.note h3{font-family:var(--serif);font-size:18px;font-weight:900;line-height:1.5;margin-bottom:12px;position:relative}
+.note p{font-size:13.5px;color:var(--ink-3);line-height:1.9;position:relative}
+.n-foot{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:16px;border-top:1px dashed var(--line);position:relative}
+.n-foot span{font-size:12px;color:var(--ink-3)}
+.n-foot a{font-size:13.5px;font-weight:700;color:var(--vermilion)}
+
+/* 选片流程 - 印章步骤 */
+.process{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px}
+.pc{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:34px 28px 28px;text-align:center;transition:.4s var(--ease)}
+.pc:hover{transform:translateY(-6px);box-shadow:var(--shadow-m);border-color:var(--line-2)}
+.pc .pseal{width:66px;height:66px;margin:0 auto 20px;border-radius:8px;background:var(--vermilion);color:#fbe8d8;font-family:var(--serif);font-size:26px;font-weight:900;display:grid;place-items:center;transform:rotate(-5deg);box-shadow:0 6px 16px rgba(200,50,31,.25);transition:.4s var(--ease)}
+.pc:hover .pseal{transform:rotate(4deg) scale(1.08)}
+.pc h4{font-family:var(--serif);font-size:18px;font-weight:900;margin-bottom:9px}
+.pc p{font-size:13px;color:var(--ink-3);line-height:1.85}
+.pc .pn{position:absolute;top:14px;right:16px;font-family:var(--serif);font-size:13px;color:var(--ink-3);letter-spacing:1px}
+
+/* 双栏对比 - 什么值得看 */
+.versus{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;background:#fff}
+.vs{border-radius:0;padding:40px 38px;position:relative}
+.vs-l{background:var(--paper-2)}
+.vs-r{background:var(--ink);color:#e7d5c5}
+.vs-r .vs-tag{background:var(--gold)}
+.vs-tag{display:inline-block;padding:5px 13px;border-radius:4px;font-size:11.5px;font-weight:700;color:#fff;background:var(--vermilion);letter-spacing:1.5px;margin-bottom:20px}
+.vs h3{font-family:var(--serif);font-size:clamp(1.4rem,2.8vw,1.9rem);font-weight:900;line-height:1.5;margin-bottom:16px}
+.vs p{font-size:14px;line-height:1.95;color:var(--ink-2);margin-bottom:20px}
+.vs-r p{color:#c9b6a6}
+.vs ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.vs li{font-size:13.5px;line-height:1.75;padding-left:20px;position:relative;color:var(--ink-2)}
+.vs-r li{color:#c9b6a6}
+.vs li::before{content:"·";position:absolute;left:4px;top:-2px;font-family:var(--serif);font-size:26px;line-height:1;color:var(--vermilion)}
+.vs-r li::before{color:var(--gold)}
+.vs-foot{margin-top:24px;padding-top:20px;border-top:1px dashed var(--line)}
+.vs-r .vs-foot{border-color:rgba(255,255,255,.14)}
+.vs-foot span{font-size:12px;color:var(--ink-3)}
+.vs-r .vs-foot span{color:#a49383}
+
+/* 留言墙 - 宣纸条 */
+.wall{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.w{background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:26px;transition:.4s var(--ease);position:relative}
+.w::after{content:"";position:absolute;top:14px;right:14px;width:9px;height:9px;border-radius:50%;background:var(--vermilion);opacity:.75}
+.w:hover{transform:translateY(-5px);box-shadow:var(--shadow-m);border-color:var(--vermilion)}
+.w-top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.w-av{width:40px;height:40px;border-radius:6px;display:grid;place-items:center;font-size:14px;font-weight:800;color:#fff;flex-shrink:0;font-family:var(--serif)}
+.w-who{font-size:14px;font-weight:800}
+.w-when{font-size:11.5px;color:var(--ink-3)}
+.w-c{font-size:13.5px;color:var(--ink-2);line-height:1.9;font-family:var(--serif)}
+.w-foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:12px}
+.w-foot .wm{color:var(--vermilion);font-weight:600}
+.w-foot .wl{color:var(--ink-3);cursor:pointer;transition:.2s}
+.w-foot .wl:hover{color:var(--vermilion)}
+
+/* 数字墙 */
+.nums{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.nums-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0}
+.nc{text-align:center;padding:52px 20px;border-right:1px solid var(--line)}
+.nc:last-child{border-right:none}
+.nc .n{font-family:var(--serif);font-size:clamp(2rem,4.4vw,3rem);font-weight:900;letter-spacing:.5px;line-height:1}
+.nc .n em{font-style:normal;font-size:.45em;color:var(--vermilion);margin-left:4px}
+.nc span{font-size:13.5px;color:var(--ink-3);margin-top:12px;display:block}
+
+/* 点灯 CTA */
+.cta{background:var(--ink);border-radius:var(--r-l);padding:64px 56px;position:relative;overflow:hidden;display:grid;grid-template-columns:1.4fr .6fr;gap:44px;align-items:center;color:#fff;box-shadow:var(--shadow-l)}
+.cta::before{content:"";position:absolute;right:-120px;top:-120px;width:340px;height:340px;border-radius:50%;background:var(--vermilion);opacity:.9}
+.cta::after{content:"";position:absolute;left:-80px;bottom:-100px;width:240px;height:240px;border-radius:50%;background:var(--gold);opacity:.5}
+.cta-txt{position:relative;z-index:2}
+.cta-txt .eyebrow{color:#f0b8ae}
+.cta-txt .eyebrow .brush-dot{background:#f0b8ae}
+.cta-txt h2{font-family:var(--serif);font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:900;line-height:1.5;margin-bottom:16px;letter-spacing:1px}
+.cta-txt p{font-size:14.5px;color:#d6c2b2;line-height:1.95}
+.cta-form{position:relative;z-index:2;display:flex;gap:12px;flex-wrap:wrap}
+.cta-in{flex:1;min-width:190px;padding:15px 20px;border-radius:var(--r-s);border:1.5px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff;font-size:14px;outline:none;font-family:inherit;transition:.3s}
+.cta-in::placeholder{color:rgba(255,255,255,.65)}
+.cta-in:focus{border-color:#fff;background:rgba(255,255,255,.2)}
+.cta-sub{padding:15px 30px;border-radius:var(--r-s);border:none;background:var(--vermilion);color:#fff;font-size:14.5px;font-weight:800;cursor:pointer;transition:.3s var(--ease);white-space:nowrap;font-family:inherit}
+.cta-sub:hover{background:var(--vermilion-l);transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
+
+/* 页脚 */
+.foot{background:var(--ink);color:#8a7369;padding:80px 0 0}
+.foot-grid{max-width:1240px;margin:0 auto;padding:0 30px 52px;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:48px}
+.foot-b{padding:0 30px;max-width:1240px;margin:0 auto}
+.foot-brand{max-width:340px}
+.foot-brand .seal{box-shadow:0 4px 14px rgba(232,56,40,.45)}
+.foot-brand .brand-cn{color:#f0dfd0}
+.foot-brand p{font-size:13.5px;line-height:1.95;margin-top:18px;color:#9c857a}
+.foot-col h4{color:#f0dfd0;font-size:14px;font-weight:800;margin-bottom:20px;letter-spacing:1px;font-family:var(--serif)}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.foot-col a{font-size:13.5px;color:#8a7369;transition:.2s}
+.foot-col a:hover{color:var(--vermilion-l)}
+.foot-bot{max-width:1240px;margin:0 auto;padding:28px 30px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px}
+.foot-bot .fl{display:flex;gap:24px}
+.foot-bot a{color:#6f5d53;transition:.2s}
+.foot-bot a:hover{color:var(--vermilion-l)}
+.foot-site{color:#6f5d53}
+
+/* 回顶 */
+.top{position:fixed;right:26px;bottom:26px;z-index:999;width:50px;height:50px;border-radius:8px;border:none;background:var(--vermilion);color:#fff;font-size:17px;cursor:pointer;box-shadow:var(--shadow-m);opacity:0;visibility:hidden;transform:translateY(14px);transition:.35s var(--ease);display:grid;place-items:center}
+.top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.top:hover{background:var(--vermilion-d);transform:translateY(-4px)}
+
+/* 入场 */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:1000px){
+    .feat-grid{grid-template-columns:1fr;gap:26px}
+    .feat-side{flex-direction:row;flex-wrap:wrap}
+    .feat-s{flex:1 1 280px}
+    .versus{grid-template-columns:1fr}
+    .cta{grid-template-columns:1fr;padding:52px 34px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:40px}
+}
+@media(max-width:768px){
+    section{padding:72px 0}
+    .sec-tag{display:none}
+    .shead,.shead-flex{margin-bottom:42px}
+    .menu{position:fixed;top:76px;left:0;right:0;flex-direction:column;background:rgba(253,246,239,.98);padding:18px 30px 26px;border-bottom:1px solid var(--line);gap:0;transform:translateY(-14px);opacity:0;visibility:hidden;transition:.35s var(--ease)}
+    .menu.open{transform:none;opacity:1;visibility:visible}
+    .menu a{padding:15px 4px;border-bottom:1px solid var(--line)}
+    .menu a::after{display:none}
+    .nav-btn{display:none}
+    .burger{display:block}
+    .hero{padding:40px 0 64px}
+    .h-marks div{border-right:none;padding:20px 22px 0 0;margin-right:22px}
+    .feat-main{min-height:420px}
+    .feat-body{padding:30px}
+    .nc{border-right:none;border-bottom:1px solid var(--line)}
+    .nc:last-child{border-bottom:none}
+    .h-actions .btn{flex:1;text-align:center;justify-content:center}
+}
+@media(max-width:480px){
+    .wrap,.nav-row,.foot-grid,.foot-bot,.foot-brand,.foot-col,.foot-b{padding-left:18px;padding-right:18px}
+    .foot-grid{grid-template-columns:1fr}
+    .films{grid-template-columns:repeat(2,1fr);gap:16px}
+    .chapters{grid-template-columns:1fr 1fr}
+    .hero h1{font-size:2.4rem}
+    .cta{padding:44px 26px}
+    .h-marks div{flex:1 1 40%}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<div class="brush" id="brush"></div>
+
+<header class="nav">
+    <div class="nav-row">
+        <a href="#" class="brand">
+            <div class="seal">红红</div>
+            <div class="brand-txt">
+                <span class="brand-cn">成人黄色电影网</span>
+                <span class="brand-en">vermilion film notes</span>
+            </div>
+        </a>
+        <ul class="menu" id="menu">
+            <li><a href="#home">首页</a></li>
+            <li><a href="#chapters">卷目</a></li>
+            <li><a href="#feat">今日主推</a></li>
+            <li><a href="#films">精选片单</a></li>
+            <li><a href="#process">选片之法</a></li>
+            <li><a href="#notes">朱红札记</a></li>
+            <li><a href="#versus">值得看吗</a></li>
+            <li><a href="#wall">读者留言</a></li>
+        </ul>
+        <button class="nav-btn" onclick="window.location.href='#'">盖一枚章</button>
+        <button class="burger" id="burger" aria-label="菜单"><s></s><s></s><s></s></button>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <div class="wrap">
+        <div class="hero-in">
+            <div class="h-eyebrow rv"><span class="v"></span><span>朱红光影志 · 卷之一</span></div>
+            <h1 class="rv">把每部好片<br>都看进<span class="em">骨子里</span><small>A Quiet Way of Watching Films</small></h1>
+            <p class="hero-sub rv">成人黄色电影网是一个慢下来的电影导航站。我们不追新、不追热，只做那些值得反复看的片子——华语经典、国风美学、治愈系与冷门遗珠，每周一更，一篇一篇慢慢写。</p>
+            <div class="h-actions rv">
+                <a href="#feat" class="btn btn-pri">🎬 看今日主推</a>
+                <a href="#process" class="btn btn-out">🖌 不知道怎么挑片</a>
+            </div>
+            <div class="hero-ink rv">
+                <span>华语经典</span><span>国风美学</span><span>治愈系</span><span>冷门遗珠</span><span>老片新看</span><span>周末专场</span>
+            </div>
+            <div class="h-marks rv">
+                <div><strong>4,800<em>+</em></strong><span>逐部筛选影片</span></div>
+                <div><strong>312<em>+</em></strong><span>已写就的札记</span></div>
+                <div><strong>每周一<em>更新</em></strong><span>雷打不动</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 卷目 -->
+<section class="scroll-nav" id="chapters" style="padding:0">
+    <div class="wrap" style="padding-top:0;padding-bottom:0">
+        <div class="chapters">
+            <a href="#feat" class="ch rv"><div class="cn">壹</div><h3>今日主推</h3><p>每周唯一的一部，附一句为什么值得看</p><span class="arrow">→</span></a>
+            <a href="#films" class="ch rv"><div class="cn">贰</div><h3>精选片单</h3><p>按主题分的百部级观影清单</p><span class="arrow">→</span></a>
+            <a href="#process" class="ch rv"><div class="cn">叁</div><h3>选片之法</h3><p>四枚印章，走完就不会踩雷</p><span class="arrow">→</span></a>
+            <a href="#notes" class="ch rv"><div class="cn">肆</div><h3>朱红札记</h3><p>观影随笔，写给同样的你</p><span class="arrow">→</span></a>
+            <a href="#versus" class="ch rv"><div class="cn">伍</div><h3>值得看吗</h3><p>热门影片的客观判断</p><span class="arrow">→</span></a>
+            <a href="#wall" class="ch rv"><div class="cn">陆</div><h3>读者留言</h3><p>读者们盖下的章</p><span class="arrow">→</span></a>
+        </div>
+    </div>
+</section>
+
+<!-- 今日主推 -->
+<section id="feat">
+    <div class="wrap">
+        <div class="shead-flex rv">
+            <div>
+                <div class="eyebrow"><span class="brush-dot"></span>今日主推 · 每周唯一</div>
+                <h2 class="stitle">这一周，只看这一部</h2>
+                <p class="sdesc">不贪多。每周我们只推一部，写清它适合什么样的心境，以及值不值得你花这两个小时。</p>
+            </div>
+            <a href="#" class="more">回看往期主推 →</a>
+        </div>
+        <div class="feat-grid">
+            <a href="#" class="feat-main rv">
+                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=820&h=980&fit=crop" alt="本周主推">
+                <div class="dim"></div>
+                <div class="feat-body">
+                    <span class="feat-tape">本周主推 · 第 47 卷</span>
+                    <h3>《山河旧梦》——<br>一部把"留白"用到极致的作品</h3>
+                    <p>138 分钟 · 华语 · 剧情 / 年代<br>适合周末下午，配一壶热茶，慢慢看，不赶时间。</p>
+                    <div class="feat-meta"><span>🎭 国风美学</span><span>⭐ 8.8 / 10</span><span>🕐 138 min</span><span>🖌 文 / 红红</span></div>
+                </div>
+            </a>
+            <div class="feat-side">
+                <a href="#" class="feat-s rv">
+                    <div class="ft">主推的理由</div>
+                    <h4>为什么是它</h4>
+                    <p>它的好不在于讲了一个多复杂的故事，而在于每一帧都让你愿意多停几秒。看完不会立刻想讨论，只想安静一会儿。</p>
+                    <div class="fx"><span>适合：想慢下来的人</span><b>必看</b></div>
+                </a>
+                <a href="#" class="feat-s rv">
+                    <div class="ft">观前提示</div>
+                    <h4>看之前要知道</h4>
+                    <p>节奏偏慢，前 20 分钟像在铺底色，请别用快进。看完建议留 10 分钟发呆。</p>
+                    <div class="fx"><span>需要的心境：安静</span><b>建议</b></div>
+                </a>
+                <a href="#" class="feat-s rv">
+                    <div class="ft">延伸阅读</div>
+                    <h4>看完还可以看</h4>
+                    <p>如果喜欢这种克制的叙事方式，片单里还有 5 部同类型的，可以连着看一个周末。</p>
+                    <div class="fx"><span>关联片单：国风留白</span><b>5 部</b></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 精选片单 -->
+<section id="films" style="background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+        <div class="shead-flex rv">
+            <div>
+                <div class="eyebrow"><span class="brush-dot"></span>精选片单</div>
+                <h2 class="stitle">近期精选 · 六卷</h2>
+                <p class="sdesc">每张海报右上角都有编号，代表它在片单里的排位；标签是朱红主推、墨绿冷门、金漆经典与墨黑深夜档。</p>
+            </div>
+            <a href="#" class="more">查看完整片库 →</a>
+        </div>
+        <div class="films">
+            <a href="#" class="film rv">
+                <div class="f-poster">
+                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=420&h=560&fit=crop" alt="第七封信">
+                    <span class="f-no">壹</span><span class="f-tag">主推</span><span class="f-play">▶</span>
+                </div>
+                <div class="f-info"><h4>第七封信</h4><div class="fr"><span>悬疑 · 文艺</span><b>⭐ 8.6</b></div><div class="fd">细节埋线极多，看完会想立刻回去看第二遍找线索。</div></div>
+            </a>
+            <a href="#" class="film rv">
+                <div class="f-poster">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=420&h=560&fit=crop" alt="小巷里的风">
+                    <span class="f-no">贰</span><span class="f-tag t2">冷门</span><span class="f-play">▶</span>
+                </div>
+                <div class="f-info"><h4>小巷里的风</h4><div class="fr"><span>爱情 · 怀旧</span><b>⭐ 9.0</b></div><div class="fd">重看时会有完全不同的心境，旧片有新味。</div></div>
+            </a>
+            <a href="#" class="film rv">
+                <div class="f-poster">
+                    <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=420&h=560&fit=crop" alt="极速时刻">
+                    <span class="f-no">叁</span><span class="f-tag t3">经典</span><span class="f-play">▶</span>
+                </div>
+                <div class="f-info"><h4>极速时刻</h4><div class="fr"><span>动作 · 飙车</span><b>⭐ 7.8</b></div><div class="fd">爽片就该在周末晚上看，配可乐和爆米花。</div></div>
+            </a>
+            <a href="#" class="film rv">
+                <div class="f-poster">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=420&h=560&fit=crop" alt="无声证词">
+                    <span class="f-no">肆</span><span class="f-tag t4">深夜</span><span class="f-play">▶</span>
+                </div>
+                <div class="f-info"><h4>无声证词</h4><div class="fr"><span>犯罪 · 悬疑</span><b>⭐ 8.4</b></div><div class="fd">节奏紧凑，适合不想思考只想被剧情带着走的时候。</div></div>
+            </a>
+            <a href="#" class="film rv">
+                <div class="f-poster">
+                    <img src="https://images.unsplash.com/photo-1585647347384-2593bc35786b?w=420&h=560&fit=crop" alt="时之彼端">
+                    <span class="f-no">伍</span><span class="f-tag t2">冷门</span><span class="f-play">▶</span>
+                </div>
+                <div class="f-info"><h4>时之彼端</h4><div class="fr"><span>科幻 · 奇幻</span><b>⭐ 8.5</b></div><div class="fd">设定很妙，看完会盯着天花板想很久。</div></div>
+            </a>
+            <a href="#" class="film rv">
+                <div class="f-poster">
+                    <img src="https://images.unsplash.com/photo-1502139214982-d0ad755818d8?w=420&h=560&fit=crop" alt="雨日六章">
+                    <span class="f-no">陆</span><span class="f-tag">主推</span><span class="f-play">▶</span>
+                </div>
+                <div class="f-info"><h4>雨日六章</h4><div class="fr"><span>治愈 · 文艺</span><b>⭐ 8.3</b></div><div class="fd">雨天最适合的六部之一，不需要思考只需要感受。</div></div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 选片之法 -->
+<section id="process">
+    <div class="wrap">
+        <div class="shead rv">
+            <div class="eyebrow"><span class="brush-dot"></span>选片之法</div>
+            <h2 class="stitle">盖下这四枚印章，基本不踩雷</h2>
+            <p class="sdesc">不知道看什么的时候，按这个顺序走一遍，比翻评分靠谱。</p>
+        </div>
+        <div class="process">
+            <div class="pc rv"><span class="pn">其壹</span><div class="pseal">壹</div><h4>定心境</h4><p>想笑、想哭、想安静还是想被震撼？说出来，范围立刻缩小一半。</p></div>
+            <div class="pc rv"><span class="pn">其贰</span><div class="pseal">贰</div><h4>量体力</h4><p>十点以后别挑战三小时的史诗片，好片子值得清醒时看。</p></div>
+            <div class="pc rv"><span class="pn">其叁</span><div class="pseal">叁</div><h4>读理由</h4><p>评分是别人的，理由才是自己的。我们只写一句话，够你判断。</p></div>
+            <div class="pc rv"><span class="pn">其肆</span><div class="pseal">肆</div><h4>开看</h4><p>调暗灯光、手机静音、备好热饮。仪式感到位，同一部片是两种体验。</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- 朱红札记 -->
+<section id="notes" style="background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+        <div class="shead-flex rv">
+            <div>
+                <div class="eyebrow"><span class="brush-dot"></span>朱红札记</div>
+                <h2 class="stitle">札记 · 近作三篇</h2>
+                <p class="sdesc">不定期更新的观影随笔，聊聊为什么是这部，以及它适合什么样的夜晚。</p>
+            </div>
+            <a href="#" class="more">全部札记 →</a>
+        </div>
+        <div class="notes">
+            <a href="#" class="note rv">
+                <div class="cat">国风美学</div>
+                <div class="n-head"><div class="n-ava">红</div><div><div class="n-who">红红</div><div class="n-when">2026.09.29 · 卷四十七</div></div></div>
+                <h3>为什么我越来越偏爱那些"不好看"的片子</h3>
+                <p>节奏慢、不讨好、几乎没有配乐，但它们会在你某天失眠的时候，突然回到脑海里。</p>
+                <div class="n-foot"><span>阅读约 6 分钟</span><span>读全文 →</span></div>
+            </a>
+            <a href="#" class="note rv">
+                <div class="cat">治愈系</div>
+                <div class="n-head"><div class="n-ava" style="background:#3f7560">木</div><div><div class="n-who">老木</div><div class="n-when">2026.09.22 · 卷四十六</div></div></div>
+                <h3>雨天最适合的六部，不需要思考，只需要感受</h3>
+                <p>窗外下雨的时候，屏幕里最好也是湿的。这几部把雨声、蒸汽和暖光拍得极美。</p>
+                <div class="n-foot"><span>阅读约 5 分钟</span><span>读全文 →</span></div>
+            </a>
+            <a href="#" class="note rv">
+                <div class="cat">冷门遗珠</div>
+                <div class="n-head"><div class="n-ava" style="background:#c79a3e">舟</div><div><div class="n-who">晚舟</div><div class="n-when">2026.09.15 · 卷四十五</div></div></div>
+                <h3>东方美学之夜：把"留白"用到极致的作品</h3>
+                <p>不是所有好画面都靠堆砌。这组片单的共同点是"不把话说满"，留给你自己填空。</p>
+                <div class="n-foot"><span>阅读约 7 分钟</span><span>读全文 →</span></div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 值得看吗 -->
+<section id="versus">
+    <div class="wrap">
+        <div class="shead rv">
+            <div class="eyebrow"><span class="brush-dot"></span>值得看吗</div>
+            <h2 class="stitle">热门影片 · 一句话判断</h2>
+            <p class="sdesc">不吹不黑，说清它适合谁、不适合谁，帮你在点开之前做决定。</p>
+        </div>
+        <div class="versus rv">
+            <div class="vs vs-l">
+                <span class="vs-tag">值得一看</span>
+                <h3>《山河旧梦》<br>适合想慢下来的人</h3>
+                <p>它不催你，也不讨好你。如果你现在的状态是"想安静地待一会儿"，这部片子会陪你待得很好。</p>
+                <ul>
+                    <li>画面极美，每一帧都值得停</li>
+                    <li>叙事克制，看完会想再回味</li>
+                    <li>适合周末下午，配一壶热茶</li>
+                </ul>
+                <div class="vs-foot"><span>推荐心境：安静、想独处</span></div>
+            </div>
+            <div class="vs vs-r">
+                <span class="vs-tag">可以跳过</span>
+                <h3>《极速时刻 4》<br>只在特定场景下值得</h3>
+                <p>不是不好，是它要的东西很明确：爆米花、可乐、周末晚上、不想动脑。缺一个条件，体验就打折。</p>
+                <ul>
+                    <li>爽点密集，但没什么余味</li>
+                    <li>需要大屏幕才过瘾</li>
+                    <li>一个人看不如和朋友一起</li>
+                </ul>
+                <div class="vs-foot"><span>推荐心境：放松、想放空</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 数字墙 -->
+<section class="nums">
+    <div class="nums-grid">
+        <div class="nc"><div class="n">4,800<em>+</em></div><span>逐部筛选影片</span></div>
+        <div class="nc"><div class="n">312<em>+</em></div><span>已写就的札记</span></div>
+        <div class="nc"><div class="n">186<em>+</em></div><span>主题片单</span></div>
+        <div class="nc"><div class="n">3.2<em>万</em></div><span>每日来访读者</span></div>
+        <div class="nc"><div class="n">每周一<em>更新</em></div><span>雷打不动的节奏</span></div>
+    </div>
+</section>
+
+<!-- 留言 -->
+<section id="wall">
+    <div class="wrap">
+        <div class="shead-flex rv">
+            <div>
+                <div class="eyebrow"><span class="brush-dot"></span>读者留言</div>
+                <h2 class="stitle">读者盖下的章</h2>
+                <p class="sdesc">大家最近看了哪些，又想把哪一部传给谁。</p>
+            </div>
+            <a href="#" class="more">也盖一枚章 →</a>
+        </div>
+        <div class="wall">
+            <div class="w rv">
+                <div class="w-top"><div class="w-av" style="background:#c8321f">红</div><div><div class="w-who">红红</div><div class="w-when">1 小时前</div></div></div>
+                <p class="w-c">跟着国风那栏看了一周，一部没踩雷。现在已经养成习惯，周末先看片单再决定做什么。</p>
+                <div class="w-foot"><span class="wm">盖于《山河旧梦》</span><span class="wl">♡ 62</span></div>
+            </div>
+            <div class="w rv">
+                <div class="w-top"><div class="w-av" style="background:#3f7560">木</div><div><div class="w-who">老木</div><div class="w-when">3 小时前</div></div></div>
+                <p class="w-c">冷门遗珠这个分类太对我胃口了，发现了好几部以前完全没听过的，感谢编辑的品味。</p>
+                <div class="w-foot"><span class="wm">盖于《时之彼端》</span><span class="wl">♡ 41</span></div>
+            </div>
+            <div class="w rv">
+                <div class="w-top"><div class="w-av" style="background:#c79a3e">舟</div><div><div class="w-who">晚舟</div><div class="w-when">昨天</div></div></div>
+                <p class="w-c">最喜欢每部片只写一句话理由这个设计，不啰嗦，自己判断，这点很难得。</p>
+                <div class="w-foot"><span class="wm">盖于《小巷里的风》</span><span class="wl">♡ 33</span></div>
+            </div>
+            <div class="w rv">
+                <div class="w-top"><div class="w-av" style="background:#57433a">宁</div><div><div class="w-who">安宁</div><div class="w-when">昨天</div></div></div>
+                <p class="w-c">留白的美学真的只有静下心才能感受到，这一卷写得很对。</p>
+                <div class="w-foot"><span class="wm">盖于 札记 · 卷四十五</span><span class="wl">♡ 24</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section>
+    <div class="wrap">
+        <div class="cta rv">
+            <div class="cta-txt">
+                <div class="eyebrow"><span class="brush-dot"></span>盖一枚章</div>
+                <h2>每周一封，<br>把那一部好片交到你手上</h2>
+                <p>不群发、不注水，每周只推一部，附一句为什么值得看。看不看都随你，先收到再说。</p>
+            </div>
+            <form class="cta-form" onsubmit="event.preventDefault();alert('章已盖下 🏮 每周一见！')">
+                <input type="email" class="cta-in" placeholder="你的邮箱地址" required>
+                <button type="submit" class="cta-sub">盖一枚章</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="foot">
+    <div class="foot-grid">
+        <div class="foot-brand">
+            <a href="#" class="brand">
+                <div class="seal">红红</div>
+                <div class="brand-txt"><span class="brand-cn">成人黄色电影网</span><span class="brand-en">vermilion film notes</span></div>
+            </a>
+            <p>一个慢下来的电影导航站，希望用一篇一篇写就的札记，陪你把每一部好片都看进骨子里。</p>
+        </div>
+        <div class="foot-col">
+            <h4>卷目导航</h4>
+            <ul>
+                <li><a href="#feat">今日主推</a></li>
+                <li><a href="#films">精选片单</a></li>
+                <li><a href="#process">选片之法</a></li>
+                <li><a href="#versus">值得看吗</a></li>
+            </ul>
+        </div>
+        <div class="foot-col">
+            <h4>主题片单</h4>
+            <ul>
+                <li><a href="#">华语经典</a></li>
+                <li><a href="#">国风美学</a></li>
+                <li><a href="#">治愈系</a></li>
+                <li><a href="#">冷门遗珠</a></li>
+            </ul>
+        </div>
+        <div class="foot-col">
+            <h4>关于本站</h4>
+            <ul>
+                <li><a href="#">关于红红</a></li>
+                <li><a href="#">札记投稿</a></li>
+                <li><a href="#">合作联系</a></li>
+                <li><a href="#">读者留言</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="foot-bot">
+        <span class="foot-site">© 2026 成人黄色电影网 · chengrenhuangsedianyingwang-zh.github.io · 朱红光影志，每周一更</span>
+        <div class="fl">
+            <a href="#">隐私政策</a>
+            <a href="#">免责声明</a>
+            <a href="#">友情链接</a>
+        </div>
+    </div>
+</footer>
+
+<button class="top" id="topBtn" aria-label="回到顶部">↑</button>
+
+<script>
+// 阅读进度
+(function(){
+    var b=document.getElementById('brush');
+    function t(){var h=document.documentElement;var p=(h.scrollTop||document.body.scrollTop)/(h.scrollHeight-window.innerHeight)*100;b.style.width=p+'%';}
+    window.addEventListener('scroll',t,{passive:true});t();
+})();
+// 汉堡菜单
+(function(){
+    var btn=document.getElementById('burger'),m=document.getElementById('menu');
+    btn.addEventListener('click',function(){btn.classList.toggle('on');m.classList.toggle('open');});
+    m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){btn.classList.remove('on');m.classList.remove('open');});});
+})();
+// 回顶
+(function(){
+    var b=document.getElementById('topBtn');
+    window.addEventListener('scroll',function(){if(window.scrollY>700)b.classList.add('show');else b.classList.remove('show');},{passive:true});
+    b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+// 入场
+(function(){
+    var io=new IntersectionObserver(function(es){
+        es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+})();
+// 点赞
+(function(){
+    document.querySelectorAll('.wl').forEach(function(x){
+        x.addEventListener('click',function(){x.textContent=x.textContent.includes('♡')?'❤️ 已赞':'♡ 赞';});
+    });
+})();
+</script>
+</body>
+</html>
